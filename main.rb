@@ -1,25 +1,18 @@
 class Kettle
 	def initialize
-		p 'The Kettle is off, wanna to turn it on?'
-		@mode = mode
+	@mode = mode
 	end
   
 	def mode
-    mode = "off"
-    trig = gets.chomp 
-    trig == "on" ?  (mode = "on"
-      puts "Kettle is #{mode}")
+	p 'The Kettle is off, wanna to turn it on?'
+  	 mode = "off"
+   	 trig = gets.chomp 
+  	 trig == "on" ?  (mode = "on"
+  	 puts "Kettle is #{mode}")
        : (puts  "Error, please write correct order. Kernel is #{mode}");   
   end
 
-  def add_water(volume)
-    water = 0
-    puts "Insert amount of water in ml "
-				volume = gets.chomp
-				if  volume + water <= 1000 
-					water = volume+water 
-				else puts "Error max volume is 1000 ml, current: #{water}"
-				end   
+
   end
   
 	def is_on?
@@ -32,7 +25,7 @@ class Kettle
 			when 1 
         puts "Type volume to add in ml."
         volume = gets.chomp
-				add_water(volume)
+			add_water(volume)
 			when 2 
 				temp = 100
 				puts "You can now make a tea"
@@ -55,11 +48,18 @@ class Kettle
       when 1
         puts "Type volume to add in ml."
         volume = gets.chomp
-				add_water(volume)
+		add_water(volume)
       when 2 
         @mode = "on"
       else "Error, try again"
     end
   end
+  def add_water(t_volume)
+    water = 0
+    puts "Insert amount of water in ml "
+				volume = gets.chomp
+				if  volume + water <= 1000 
+					water = volume+water 
+				else puts "Error max volume is 1000 ml, current: #{water}"
+				end   
 end
-kettle = Kettle.new
